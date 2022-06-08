@@ -25,9 +25,9 @@ class ConnectivityInterceptor(val context: Context) : Interceptor {
             Log.e("ConnectionManager", "Not connected to the Internet")
             e.printStackTrace(pw)
 
-            return Response.Builder().code(-2)
+            return Response.Builder().code(0)
                 .body(
-                    Gson().toJson(ErrorData(sw.toString(), -2))
+                    Gson().toJson(ErrorData(sw.toString(), 0))
                         .toResponseBody("application/json".toMediaTypeOrNull())
                 )
                 .request(chain.request())

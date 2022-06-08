@@ -1,6 +1,5 @@
 package iglo.bootcamp.assessmentNewsApi.activity.list_article
 
-import android.util.Log
 import android.view.inputmethod.EditorInfo
 import androidx.core.widget.addTextChangedListener
 import androidx.paging.LoadState

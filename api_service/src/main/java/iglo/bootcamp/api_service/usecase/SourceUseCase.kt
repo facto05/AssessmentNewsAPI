@@ -15,7 +15,7 @@ class SourceUseCase(private val sourceService: SourceService) {
             if(response.isSuccessful){
                 response.body()?.sources?.let {
                     send(AppResponse.success(it))
-                } ?: send(AppResponse.error<List<Source>>(Exception("System Error"), null))
+                }
             }
             else{
                 send(AppResponse.error<List<Source>>(Exception("Invalid Data"), response.errorBody()))

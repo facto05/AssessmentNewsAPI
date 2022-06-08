@@ -22,8 +22,8 @@ fun SourceActivity.observeLiveData() = with(vm) {
                 }
             }
             is AppResponseError -> {
-                binding.btnRetry.setVisible()
                 binding.progressBar.setGone()
+                binding.btnRetry.setVisible()
             }
         }
     }
