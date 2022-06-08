@@ -33,7 +33,7 @@ fun SourceActivity.initBinding(category : String) = with(binding){
     title = "Source News"
     binding.recycler.adapter = adapter
     vm?.getSource(category)
-    binding.inputText.addTextChangedListener {
+    binding.textInputSearch.addTextChangedListener {
         vm?.searchText = it.toString()
         vm?.filterSource()
         adapter.data.submitList(vm?.listSearch)
