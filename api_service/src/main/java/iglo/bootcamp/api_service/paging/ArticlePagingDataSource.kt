@@ -18,7 +18,7 @@ class ArticlePagingDataSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Article> {
         val page = params.key ?: 1
-        val pageSize = 50
+        val pageSize = 20
         try {
 
             val result = articleService.getArticleService(

@@ -5,5 +5,5 @@ import iglo.bootcamp.api_service.service.ArticleService
 
 class ArticleUseCase(private val articleService: ArticleService) {
     operator fun invoke(sources: String, q: String) =
-        ArticlePager.createPager(articleService, 50, sources, q).flow
+        ArticlePager.createPager(articleService, 20, sources, q).flow
 }
