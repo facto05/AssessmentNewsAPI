@@ -13,10 +13,7 @@ class ArticlePagingDataSource(
     private val q: String
 ) : PagingSource<Int, Article>(){
     override fun getRefreshKey(state: PagingState<Int, Article>): Int? {
-        return state.anchorPosition?.let {
-            state.closestPageToPosition(it)?.prevKey?.plus(1)
-                ?: state.closestPageToPosition(it)?.nextKey?.minus(1)
-        }
+        return null
     }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Article> {
@@ -36,7 +33,6 @@ class ArticlePagingDataSource(
             val prevKey = if (page == 1) null else page - 1
             val nextKey = if (
                 result.body()?.articles?.isEmpty() == true ||
-                result.body()?.let { page * pageSize >= 100 } == true ||
                 result.body()?.let { page * pageSize >= it.totalResults } == true
             ) {
                 null
@@ -57,6 +53,9 @@ class ArticlePagingDataSource(
 
 }
 
+//PagingSource
+//Pager
+//PagingData
 object ArticlePager {
     fun createPager(
         articleService: ArticleService,

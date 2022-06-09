@@ -46,6 +46,7 @@ class ListArticlePagingAdapter(val context: Context) :
         holder.bind(getItem(position))
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListArticleViewHolder {
         return ListArticleViewHolder(
             ListArticleItemLayoutBinding.inflate(
