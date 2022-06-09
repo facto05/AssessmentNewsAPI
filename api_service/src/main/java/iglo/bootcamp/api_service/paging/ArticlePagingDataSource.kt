@@ -53,9 +53,9 @@ class ArticlePagingDataSource(
 
 }
 
-//PagingSource
-//Pager
-//PagingData
+//PagingSource(flow)
+//Pager(encapsulation)
+//PagingData(Data Type on Adapter)
 object ArticlePager {
     fun createPager(
         articleService: ArticleService,
